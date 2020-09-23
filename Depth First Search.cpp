@@ -1,21 +1,25 @@
+//dfs에서는 bfs와 다르게 스택이 사용됨. 이유는 컴터는 스택의 원리를 항상 사용하기 떄문이다.
+ 
+ 
+
+
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-int number = 7;
-int c[8];
+int c[7];
 vector<int> a[8];
 
-void dfs(int x){
+void dfs(int x) {
 	if(c[x]) return;
-	c[x]=true;
+	c[x] = true;
 	cout << x << ' ';
-	for(int i = 0;i<a[x].size();i++){
+	for(int i = 0; i < a[x].size(); i++) {
 		int y = a[x][i];
 		dfs(y);
-		
 	}
+		
 }
 
 int main(void){
@@ -50,9 +54,5 @@ int main(void){
 	
 	return 0; 
 	
-	
 }
-
-
-//////dfs bfs 그 자체로만은 큰 의미는 없고 나중에 활용 떄문에 의미가 있다. 
-
+	
